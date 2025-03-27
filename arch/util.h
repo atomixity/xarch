@@ -24,6 +24,13 @@ typedef void* addr_t;
         ((0b ## class0)      )                      \
     )
 
+#define ___class8(class7, class6, class5, class4,           \
+                  class3, class2, class1, class0)           \
+    (                                                       \
+        ___class4(class7, class6, class5, class4) << 16 |   \
+        ___class4(class3, class2, class1, class0)           \
+    )
+
 #define ISA16(_instr, c3, c2, c1, c0, _mask)            \
     (!!(                                                \
         (___class4(c3, c2, c1, c0) & ((u16)(_mask)))    \
