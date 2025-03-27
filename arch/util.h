@@ -39,4 +39,12 @@ typedef void* addr_t;
             ? 1 : 0                                     \
     ))
 
+#define ISA32(_instr, c7, c6, c5, c4, c3, c2, c1, c0, _mask)            \
+    (!!(                                                                \
+        (___class8(c7, c6, c5, c4, c3, c2, c1, c0) & ((u32)(_mask)))    \
+            ==                                                          \
+        ((*(u32*)(_instr)) & ((u32)(_mask)))                            \
+            ? 1 : 0                                                     \
+    ))
+
 #endif /* __XARCH_UTIL_H__ */
