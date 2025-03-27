@@ -18,6 +18,14 @@
 
 #include <stdint.h>
 
+#ifdef __cplusplus
+#define XAR_BEGIN_DECLS extern "C" {
+#define XAR_END_DECLS   }
+#else
+#define XAR_BEGIN_DECLS
+#define XAR_END_DECLS
+#endif
+
 typedef int8_t      s8;
 typedef int16_t     s16;
 typedef int32_t     s32;

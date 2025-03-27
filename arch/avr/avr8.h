@@ -18,6 +18,8 @@
 
 #include "../util.h"
 
+XAR_BEGIN_DECLS
+
 static inline u16 avr_NOP(addr_t pc)
 {
     return ISA16(pc, 0000, 0000, 0000, 0000, ~0x0);
@@ -741,5 +743,7 @@ static inline u16 avr_MOVW(addr_t pc)
 {
     return ISA16(pc, 0000, 0001, 0000, 0000, ~0xff);
 }
+
+XAR_END_DECLS
 
 #endif /* __AVR8_IMPL_H__ */
