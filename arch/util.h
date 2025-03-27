@@ -46,20 +46,22 @@ typedef void* addr_t;
         ___class4(class3, class2, class1, class0)           \
     )
 
-#define ISA16(_instr, c3, c2, c1, c0, _mask)            \
-    (!!(                                                \
-        (___class4(c3, c2, c1, c0) & ((u16)(_mask)))    \
-            ==                                          \
-        ((*(u16*)(_instr)) & ((u16)(_mask)))            \
-            ? 1 : 0                                     \
-    ))
+#define ISA16(_instr, c3, c2, c1, c0, _mask)                                \
+    (                                                                       \
+        ((___class4(c3, c2, c1, c0) & ((u16)(_mask)))                       \
+            ==                                                              \
+        ((*(u16*)(_instr)) & ((u16)(_mask))))                               \
+            ? (~(_mask) ? (*(u16*)(_instr) & ~(_mask)) : *(u16*)(_instr))   \
+            : 0                                                             \
+    )
 
-#define ISA32(_instr, c7, c6, c5, c4, c3, c2, c1, c0, _mask)            \
-    (!!(                                                                \
-        (___class8(c7, c6, c5, c4, c3, c2, c1, c0) & ((u32)(_mask)))    \
-            ==                                                          \
-        ((*(u32*)(_instr)) & ((u32)(_mask)))                            \
-            ? 1 : 0                                                     \
-    ))
+#define ISA32(_instr, c7, c6, c5, c4, c3, c2, c1, c0, _mask)                \
+    (                                                                       \
+        ((___class8(c7, c6, c5, c4, c3, c2, c1, c0) & ((u32)(_mask)))       \
+            ==                                                              \
+        ((*(u32*)(_instr)) & ((u32)(_mask))))                               \
+            ? (~(_mask) ? (*(u32*)(_instr) & ~(_mask)) : *(u32*)(_instr))   \
+            : 0                                                             \
+    )
 
 #endif /* __XARCH_UTIL_H__ */
