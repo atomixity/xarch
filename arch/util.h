@@ -28,6 +28,13 @@ typedef uint16_t    u16;
 typedef uint32_t    u32;
 typedef uint64_t    u64;
 
+/**
+ * @brief Represents of an address.
+ * 
+ * This type represents of an address as a pointer
+ * representing an address. But neither virtual address
+ * nor physical address.
+ */
 typedef void* addr_t;
 
 
@@ -46,6 +53,20 @@ typedef void* addr_t;
         ___class4(class3, class2, class1, class0)           \
     )
 
+/**
+ * @brief Decodes 16-bit instructions.
+ * 
+ * This function decodes 16-bit opcode(@_instr) by class4
+ * and returns 0 or a masked value representing false or true
+ * respectively.
+ * 
+ * @param _instr opcodes from Program Counter.
+ * @param c3..c0 represents defined opcodes in binary form.
+ * @param _mask a mask to recognize a opcode.
+ * @return 0 if @_instr is not part of @c3..@c0.
+ *         x > 0 if fully matched by @_mask, 0xffff,
+ *               or partially matched with @c3..@c0.
+ */
 #define ISA16(_instr, c3, c2, c1, c0, _mask)                                \
     (                                                                       \
         ((___class4(c3, c2, c1, c0) & ((u16)(_mask)))                       \
@@ -55,6 +76,20 @@ typedef void* addr_t;
             : 0                                                             \
     )
 
+/**
+ * @brief Decodes 32-bit instructions.
+ * 
+ * This function decodes 32-bit opcode(@_instr) by class8
+ * and returns 0 or a masked value representing false or true
+ * respectively.
+ * 
+ * @param _instr opcodes from Program Counter.
+ * @param c7..c0 represents defined opcodes in binary form.
+ * @param _mask a mask to recognize a opcode.
+ * @return 0 if @_instr is not part of @c7..@c0.
+ *         x > 0 if fully matched by @_mask, 0xffff'ffff,
+ *               or partially matched with @c7..@c0.
+ */
 #define ISA32(_instr, c7, c6, c5, c4, c3, c2, c1, c0, _mask)                \
     (                                                                       \
         ((___class8(c7, c6, c5, c4, c3, c2, c1, c0) & ((u32)(_mask)))       \
