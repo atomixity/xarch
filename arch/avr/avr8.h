@@ -322,18 +322,6 @@ static inline u16 avr_IN(addr_t pc)
     return ISA16(pc, 1011, 0000, 0000, 0000, 0xf800);
 }
 
-#if defined(AVRrc)
-static inline u16 avr_STS(addr_t pc)
-{
-    return ISA16(pc, 1010, 1000, 0000, 0000, 0xf800);
-}
-
-static inline u16 avr_LDS(addr_t pc)
-{
-    return ISA16(pc, 1010, 0000, 0000, 0000, 0xf800);
-}
-#endif
-
 static inline u16 avr_STy4(addr_t pc)
 {
     return ISA16(pc, 1000, 0010, 0000, 1000, ~0x2df7);
@@ -514,10 +502,17 @@ static inline u16 avr_STz2(addr_t pc)
     return ISA16(pc, 1001, 0010, 0000, 0001, ~0x1f0);
 }
 
+#if defined(AVRrc)
+static inline u16 avr_STS(addr_t pc)
+{
+    return ISA16(pc, 1010, 1000, 0000, 0000, 0xf800);
+}
+#else /* !AVRrc */
 static inline u16 avr_STS(addr_t pc)
 {
     return ISA16(pc, 1001, 0010, 0000, 0000, ~0x1f0);
 }
+#endif /* AVRrc */
 
 static inline u16 avr_POP(addr_t pc)
 {
@@ -579,10 +574,17 @@ static inline u16 avr_LDz2(addr_t pc)
     return ISA16(pc, 1001, 0000, 0000, 0001, ~0x1f0);
 }
 
+#if defined(AVRrc)
+static inline u16 avr_LDS(addr_t pc)
+{
+    return ISA16(pc, 1010, 0000, 0000, 0000, 0xf800);
+}
+#else /* !AVRrc */
 static inline u16 avr_LDS(addr_t pc)
 {
     return ISA16(pc, 1001, 0000, 0000, 0000, ~0x1f0);
 }
+#endif /* AVRrc */
 
 static inline u16 avr_STy1(addr_t pc)
 {
