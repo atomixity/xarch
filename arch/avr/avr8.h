@@ -37,12 +37,12 @@ static inline u16 avr_SPM(addr_t pc)
     return ISA16(pc, 1001, 0101, 1110, 1000, ~0x0);
 }
 
-static inline u16 avr_ELPM_i(addr_t pc)
+static inline u16 avr_ELPM1(addr_t pc)
 {
     return ISA16(pc, 1001, 0101, 1101, 1000, ~0x0);
 }
 
-static inline u16 avr_LPM_i(addr_t pc)
+static inline u16 avr_LPM1(addr_t pc)
 {
     return ISA16(pc, 1001, 0101, 1100, 1000, ~0x0);
 }
@@ -334,22 +334,22 @@ static inline u16 avr_LDS(addr_t pc)
 }
 #endif
 
-static inline u16 avr_STy_iv(addr_t pc)
+static inline u16 avr_STy4(addr_t pc)
 {
     return ISA16(pc, 1000, 0010, 0000, 1000, ~0x2df7);
 }
 
-static inline u16 avr_STz_iv(addr_t pc)
+static inline u16 avr_STz4(addr_t pc)
 {
     return ISA16(pc, 1000, 0010, 0000, 0000, ~0x2df7);
 }
 
-static inline u16 avr_LDy_iv(addr_t pc)
+static inline u16 avr_LDy4(addr_t pc)
 {
     return ISA16(pc, 1000, 0000, 0000, 1000, ~0x2df7);
 }
 
-static inline u16 avr_LDz_iv(addr_t pc)
+static inline u16 avr_LDz4(addr_t pc)
 {
     return ISA16(pc, 1000, 0000, 0000, 0000, ~0x2df7);
 }
@@ -459,27 +459,27 @@ static inline u16 avr_PUSH(addr_t pc)
     return ISA16(pc, 1001, 0010, 0000, 1111, ~0x1f0);
 }
 
-static inline u16 avr_STx_iii(addr_t pc)
+static inline u16 avr_STx3(addr_t pc)
 {
     return ISA16(pc, 1001, 0010, 0000, 1110, ~0x1f0);
 }
 
-static inline u16 avr_STx_ii(addr_t pc)
+static inline u16 avr_STx2(addr_t pc)
 {
     return ISA16(pc, 1001, 0010, 0000, 1101, ~0x1f0);
 }
 
-static inline u16 avr_STx_i(addr_t pc)
+static inline u16 avr_STx1(addr_t pc)
 {
     return ISA16(pc, 1001, 0010, 0000, 1100, ~0x1f0);
 }
 
-static inline u16 avr_STy_iii(addr_t pc)
+static inline u16 avr_STy3(addr_t pc)
 {
     return ISA16(pc, 1001, 0010, 0000, 1010, ~0x1f0);
 }
 
-static inline u16 avr_STy_ii(addr_t pc)
+static inline u16 avr_STy2(addr_t pc)
 {
     return ISA16(pc, 1001, 0010, 0000, 1001, ~0x1f0);
 }
@@ -504,12 +504,12 @@ static inline u16 avr_XCH(addr_t pc)
     return ISA16(pc, 1001, 0010, 0000, 0100, ~0x1f0);
 }
 
-static inline u16 avr_STz_iii(addr_t pc)
+static inline u16 avr_STz3(addr_t pc)
 {
     return ISA16(pc, 1001, 0010, 0000, 0010, ~0x1f0);
 }
 
-static inline u16 avr_STz_ii(addr_t pc)
+static inline u16 avr_STz2(addr_t pc)
 {
     return ISA16(pc, 1001, 0010, 0000, 0001, ~0x1f0);
 }
@@ -524,57 +524,57 @@ static inline u16 avr_POP(addr_t pc)
     return ISA16(pc, 1001, 0000, 0000, 1111, ~0x1f0);
 }
 
-static inline u16 avr_LDx_iii(addr_t pc)
+static inline u16 avr_LDx3(addr_t pc)
 {
     return ISA16(pc, 1001, 0000, 0000, 1110, ~0x1f0);
 }
 
-static inline u16 avr_LDx_ii(addr_t pc)
+static inline u16 avr_LDx2(addr_t pc)
 {
     return ISA16(pc, 1001, 0000, 0000, 1101, ~0x1f0);
 }
 
-static inline u16 avr_LDx_i(addr_t pc)
+static inline u16 avr_LDx1(addr_t pc)
 {
     return ISA16(pc, 1001, 0000, 0000, 1100, ~0x1f0);
 }
 
-static inline u16 avr_LDy_iii(addr_t pc)
+static inline u16 avr_LDy3(addr_t pc)
 {
     return ISA16(pc, 1001, 0000, 0000, 1010, ~0x1f0);
 }
 
-static inline u16 avr_LDy_ii(addr_t pc)
+static inline u16 avr_LDy2(addr_t pc)
 {
     return ISA16(pc, 1001, 0000, 0000, 1001, ~0x1f0);
 }
 
-static inline u16 avr_ELPM_iii(addr_t pc)
+static inline u16 avr_ELPM3(addr_t pc)
 {
     return ISA16(pc, 1001, 0000, 0000, 0111, ~0x1f0);
 }
 
-static inline u16 avr_ELPM_ii(addr_t pc)
+static inline u16 avr_ELPM2(addr_t pc)
 {
     return ISA16(pc, 1001, 0000, 0000, 0110, ~0x1f0);
 }
 
-static inline u16 avr_LPM_iii(addr_t pc)
+static inline u16 avr_LPM3(addr_t pc)
 {
     return ISA16(pc, 1001, 0000, 0000, 0101, ~0x1f0);
 }
 
-static inline u16 avr_LPM_ii(addr_t pc)
+static inline u16 avr_LPM2(addr_t pc)
 {
     return ISA16(pc, 1001, 0000, 0000, 0100, ~0x1f0);
 }
 
-static inline u16 avr_LDz_iii(addr_t pc)
+static inline u16 avr_LDz3(addr_t pc)
 {
     return ISA16(pc, 1001, 0000, 0000, 0010, ~0x1f0);
 }
 
-static inline u16 avr_LDz_ii(addr_t pc)
+static inline u16 avr_LDz2(addr_t pc)
 {
     return ISA16(pc, 1001, 0000, 0000, 0001, ~0x1f0);
 }
@@ -584,22 +584,22 @@ static inline u16 avr_LDS(addr_t pc)
     return ISA16(pc, 1001, 0000, 0000, 0000, ~0x1f0);
 }
 
-static inline u16 avr_STy_i(addr_t pc)
+static inline u16 avr_STy1(addr_t pc)
 {
     return ISA16(pc, 1000, 0010, 0000, 1000, ~0x1f0);
 }
 
-static inline u16 avr_STz_i(addr_t pc)
+static inline u16 avr_STz1(addr_t pc)
 {
     return ISA16(pc, 1000, 0010, 0000, 0000, ~0x1f0);
 }
 
-static inline u16 avr_LDy_i(addr_t pc)
+static inline u16 avr_LDy1(addr_t pc)
 {
     return ISA16(pc, 1000, 0000, 0000, 1000, ~0x1f0);
 }
 
-static inline u16 avr_LDz_i(addr_t pc)
+static inline u16 avr_LDz1(addr_t pc)
 {
     return ISA16(pc, 1000, 0000, 0000, 0000, ~0x1f0);
 }
