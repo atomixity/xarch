@@ -26,7 +26,7 @@ static inline u16 avr8_NOP(addr_t pc)
 }
 
 #if defined(AVRxm) || defined(AVRxt)
-static inline u16 avr8_SPM(addr_t pc)
+static inline u16 avr8_SPM5(addr_t pc)
 {
     return ISA16(pc, 1001, 0101, 1111, 1000, ~0x0);
 }
