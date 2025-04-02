@@ -1,0 +1,149 @@
+NOP      0000'0000'0000'0000
+SPM      1001'0101'1111'1000 (v-viiii: AVRxm | AVRxt)
+SPM      1001'0101'1110'1000 (XXX) or (i-iv: AVRxm | AVRxt)
+ELPM     1001'0101'1101'1000 (i)
+LPM      1001'0101'1100'1000 (i)
+WDR      1001'0101'1010'1000
+BREAK    1001'0101'1001'1000
+SLEEP    1001'0101'1000'1000
+EICALL   1001'0101'0001'1001
+RETI     1001'0101'0001'1000 two cases depending on devices
+ICALL    1001'0101'0000'1001
+RET      1001'0101'0000'1000 two cases depending on devices
+CLI      1001'0100'1111'1000
+CLT      1001'0100'1110'1000
+CLH      1001'0100'1101'1000
+CLS      1001'0100'1100'1000
+CLV      1001'0100'1011'1000
+CLN      1001'0100'1010'1000
+CLZ      1001'0100'1001'1000
+CLC      1001'0100'1000'1000
+SEI      1001'0100'0111'1000
+SET      1001'0100'0110'1000
+SEH      1001'0100'0101'1000
+SES      1001'0100'0100'1000
+SEV      1001'0100'0011'1000
+SEN      1001'0100'0010'1000
+EIJMP    1001'0100'0001'1001
+SEZ      1001'0100'0001'1000
+IJMP     1001'0100'0000'1001
+SEC      1001'0100'0000'1000
+SBRS     1111'111r'rrrr'0bbb
+SBRC     1111'110r'rrrr'0bbb
+BST      1111'101d'dddd'0bbb
+BLD      1111'100d'dddd'0bbb
+BRID     1111'01kk'kkkk'k111
+BRTC     1111'01kk'kkkk'k110
+BRHC     1111'01kk'kkkk'k101
+BRGE     1111'01kk'kkkk'k100
+BRVC     1111'01kk'kkkk'k011
+BRPL     1111'01kk'kkkk'k010
+BRNE     1111'01kk'kkkk'k001
+BRCC     1111'01kk'kkkk'k000
+BRSH     1111'01kk'kkkk'k000
+BRBC     1111'01kk'kkkk'ksss
+BRIE     1111'00kk'kkkk'k111
+BRTS     1111'00kk'kkkk'k110
+BRHS     1111'00kk'kkkk'k101
+BRLT     1111'00kk'kkkk'k100
+BRVS     1111'00kk'kkkk'k011
+BRMI     1111'00kk'kkkk'k010
+BREQ     1111'00kk'kkkk'k001
+BRCS     1111'00kk'kkkk'k000
+BRLO     1111'00kk'kkkk'k000
+BRBS     1111'00kk'kkkk'ksss
+SER      1110'1111'dddd'1111
+LDI      1110'KKKK'dddd'KKKK
+RCALL    1101'kkkk'kkkk'kkkk
+RJMP     1100'kkkk'kkkk'kkkk
+OUT      1011'1AAr'rrrr'AAAA
+IN       1011'0AAd'dddd'AAAA
+STS      1010'1kkk'dddd'kkkk (AVRrc only)
+LDS      1010'0kkk'dddd'kkkk (AVRrc only)
+ST(y)    10q0'qq1r'rrrr'1qqq (iv)
+ST(z)    10q0'qq1r'rrrr'0qqq (iv)
+LD(y)    10q0'qq0d'dddd'1qqq (iv)
+LD(z)    10q0'qq0d'dddd'0qqq (iv)
+MUL      1001'11rd'dddd'rrrr
+SBIS     1001'1011'AAAA'Abbb
+SBI      1001'1010'AAAA'Abbb
+SBIC     1001'1001'AAAA'Abbb
+CBI      1001'1000'AAAA'Abbb
+SBIW     1001'0111'KKdd'KKKK
+ADIW     1001'0110'KKdd'KKKK
+CALL     1001'010k'kkkk'111k (32-bit op)
+         kkkk'kkkk'kkkk'kkkk
+JMP      1001'010k'kkkk'110k (32-bit op)
+         kkkk'kkkk'kkkk'kkkk
+DES      1001'0100'KKKK'1011
+DEC      1001'010d'dddd'1010
+BCLR     1001'0100'1sss'1000
+BSET     1001'0100'0sss'1000 (32-bit op)
+         kkkk'kkkk'kkkk'kkkk
+ROR      1001'010d'dddd'0111
+LSR      1001'010d'dddd'0110
+ASR      1001'010d'dddd'0101
+INC      1001'010d'dddd'0011
+SWAP     1001'010d'dddd'0010
+NEG      1001'010d'dddd'0001
+COM      1001'010d'dddd'0000
+PUSH     1001'001d'dddd'1111
+ST(x)    1001'001r'rrrr'1110 (iii)
+ST(x)    1001'001r'rrrr'1101 (ii)
+ST(x)    1001'001r'rrrr'1100 (i)
+ST(y)    1001'001r'rrrr'1010 (iii)
+ST(y)    1001'001r'rrrr'1001 (ii)
+LAT      1001'001r'rrrr'0111
+LAC      1001'001r'rrrr'0110
+LAS      1001'001r'rrrr'0101
+XCH      1001'001r'rrrr'0100
+ST(z)    1001'001r'rrrr'0010 (iii)
+ST(z)    1001'001r'rrrr'0001 (ii)
+STS      1001'001d'dddd'0000 (32-bit op)
+         kkkk'kkkk'kkkk'kkkk
+POP      1001'000d'dddd'1111
+LD(x)    1001'000d'dddd'1110 (iii)
+LD(x)    1001'000d'dddd'1101 (ii)
+LD(x)    1001'000d'dddd'1100 (i)
+LD(y)    1001'000d'dddd'1010 (iii)
+LD(y)    1001'000d'dddd'1001 (ii)
+ELPM     1001'000d'dddd'0111 (iii)
+ELPM     1001'000d'dddd'0110 (ii)
+LPM      1001'000d'dddd'0101 (iii)
+LPM      1001'000d'dddd'0100 (ii)
+LD(z)    1001'000d'dddd'0010 (iii)
+LD(z)    1001'000d'dddd'0001 (ii)
+LDS      1001'000d'dddd'0000 (32-bit op)
+         kkkk'kkkk'kkkk'kkkk
+ST(y)    1000'001r'rrrr'1000 (i)
+ST(z)    1000'001r'rrrr'0000 (i)
+LD(y)    1000'000d'dddd'1000 (i)
+LD(z)    1000'000d'dddd'0000 (i)
+ANDI     0111'KKKK'dddd'KKKK
+CBR      0111'KKKK'dddd'KKKK (ANDI with K complemented)
+SBR      0110'KKKK'dddd'KKKK
+ORI      0110'KKKK'dddd'KKKK
+SUBI     0101'KKKK'dddd'KKKK
+SBCI     0100'KKKK'dddd'KKKK
+CPI      0011'KKKK'dddd'KKKK
+MOV      0010'11rd'dddd'rrrr
+OR       0010'10rd'dddd'rrrr
+CLR      0010'01dd'dddd'dddd
+EOR      0010'01rd'dddd'rrrr
+TST      0010'00dd'dddd'dddd
+AND      0010'00rd'dddd'rrrr
+ROL      0001'11dd'dddd'dddd
+ADC      0001'11rd'dddd'rrrr
+SUB      0001'10rd'dddd'rrrr
+CP       0001'01rd'dddd'rrrr
+CPSE     0001'00rd'dddd'rrrr
+LSL      0000'11dd'dddd'dddd
+ADD      0000'11rd'dddd'rrrr
+SBC      0000'10rd'dddd'rrrr
+CPC      0000'01rd'dddd'rrrr
+FMULSU   0000'0011'1ddd'1rrr
+FMULS    0000'0011'1ddd'0rrr
+FMUL     0000'0011'0ddd'1rrr
+MULSU    0000'0011'0ddd'0rrr
+MULS     0000'0010'dddd'rrrr
+MOVW     0000'0001'dddd'rrrr
