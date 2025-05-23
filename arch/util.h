@@ -36,15 +36,6 @@ typedef uint16_t    u16;
 typedef uint32_t    u32;
 typedef uint64_t    u64;
 
-/**
- * @brief Represents of an address.
- * 
- * This type represents of an address as a pointer
- * representing an address. But neither virtual address
- * nor physical address.
- */
-typedef void* addr_t;
-
 
 #define ___class4(class3, class2, class1, class0)   \
     (                                               \
